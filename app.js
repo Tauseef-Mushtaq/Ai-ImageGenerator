@@ -48,7 +48,7 @@ const createImageCards = (selectedModel, imageCount, aspectRatio, promptText) =>
     gridGallery.innerHTML = ""; //Clear previous cards
 
     for(let i=0; i<imageCount; i++){
-        gridGallery.innerHtml += `<div class="img-card loading" id="image-card-${i}" style="aspect-ratio: ${aspectRatio}">
+        gridGallery.innerHTML += `<div class="img-card loading" id="image-card-${i}" style="aspect-ratio: ${aspectRatio}">
                         <div class="status-container">
                             <i class="fa-solid fa-triangle-exclamation"></i>
                             <div class="spinner"></div>
@@ -64,12 +64,12 @@ const handleFromSubmit = (e) => {
     e.preventDefault();
 
     //get From values
-    const selectModel = modelSelect.value;
-    const imageCount = countSelect.value || 1;
+    const selectedModel = modelSelect.value;
+    const imageCount = parseInt(countSelect.value) || 1;
     const aspectRatio = ratioSelect.value || "1/1";
     const promptText = promptInput.value.trim();
 
-   createImageCards(selectModel, imageCount, aspectRatio, promptText);
+   createImageCards(selectedModel, imageCount, aspectRatio, promptText);
 };
 
 //Fill prompt input with a random example prompt

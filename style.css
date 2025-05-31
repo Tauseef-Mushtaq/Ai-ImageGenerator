@@ -239,7 +239,7 @@ body.dark-theme  .container{
 }
 
 .main-content .gallery-grid:has(.img-card){
-    margin: 30px;
+    margin-top: 30px;
 }
 
 .main-content .gallery-grid{
